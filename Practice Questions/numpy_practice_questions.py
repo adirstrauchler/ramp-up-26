@@ -1,0 +1,20 @@
+import numpy as np
+def run():
+    a = np.array([1, 2, 3, 2, 3, 4, 3, 4, 5, 6])
+    b = np.array([7, 2, 10, 2, 7, 4, 9, 4, 9, 8])
+    print(np.intersect1d(a,b))
+    c = np.arange(1,16)
+    c = c.reshape(5,3, order = "F")
+    print(c)
+    d = c.flatten("F")
+    print(d)
+    e = c.reshape(5,1,3)
+    print(e)
+    f = e.reshape(5,3)
+    print(f)
+    a = np.array([12, 5, 7, 15, 3, 1, 8])
+    b = np.array([14, 6, 3, 11, 19, 12, 5])
+    g = np.setdiff1d(a, np.intersect1d(a,b))
+    print(g)
+if __name__ == "__main__":
+    run()
