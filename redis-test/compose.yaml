@@ -1,0 +1,17 @@
+services:
+  redis:
+    image: redis:8.8-alpine
+
+  publisher:
+    image: publisher
+    depends_on:
+      - redis
+    ports:
+      - "8081:8000"
+    
+  subscriber:
+    image: subscriber
+    depends_on:
+      - redis
+    ports:
+      - "8082:8000"
