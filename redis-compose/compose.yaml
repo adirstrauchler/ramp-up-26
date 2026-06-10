@@ -3,14 +3,18 @@ services:
     image: redis:8.8-alpine
 
   publisher:
-    image: publisher
+    build: 
+      context: ./publisher
+      dockerfile: Dockerfile
     depends_on:
       - redis
     ports:
       - "8001:8001"
     
   subscriber:
-    image: subscriber
+    build: 
+      context: ./subscriber
+      dockerfile: Dockerfile
     depends_on:
       - redis
     ports:
